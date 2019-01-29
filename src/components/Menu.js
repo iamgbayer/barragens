@@ -2,10 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { Menu as Menuable, Icon } from 'antd'
 
-const Container = styled.div``
+const Container = styled(Menuable)`
+  width: 100%;
+  max-width: 260px;
+`
 
 export const Menu = () => (
-  <Menuable>
+  <Container>
     <Menuable.Item>
       <Icon type="alert" />
       Barragens
@@ -14,5 +17,5 @@ export const Menu = () => (
       <Icon type="question" />
       Sobre
     </Menuable.Item>
-  </Menuable>
+  </Container>
 )
