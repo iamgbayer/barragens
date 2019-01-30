@@ -4,8 +4,9 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 import { Header } from './components/Header'
 import { Menu } from './components/Menu'
-import { Map } from './Pages/Map'
-import { About } from './Pages/About'
+import { Map } from './pages/Map'
+import { About } from './pages/About'
+import { LocationProvider } from './providers/LocationProvider'
 
 const Container = styled.div`
   width: 100%;
@@ -22,7 +23,9 @@ export const App = () => (
 
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path="/" component={Map} />
+          <LocationProvider>
+            <Route exact={true} path="/" component={Map} />
+          </LocationProvider>
           <Route path="/about" component={About} />
         </Switch>
       </BrowserRouter>
