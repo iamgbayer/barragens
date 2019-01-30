@@ -19,9 +19,9 @@ export const App = () => (
     <Header />
 
     <Container>
-      <Menu />
-
       <BrowserRouter>
+        <Menu />
+
         <Switch>
           <LocationProvider>
             <Route exact={true} path="/" component={Map} />

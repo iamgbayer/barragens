@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Menu as Menuable, Icon } from 'antd'
+import { Link } from 'react-router-dom'
 
 const Container = styled(Menuable)`
   width: 100%;
@@ -9,13 +10,17 @@ const Container = styled(Menuable)`
 
 export const Menu = () => (
   <Container>
-    <Menuable.Item>
-      <Icon type="alert" />
-      Barragens
-    </Menuable.Item>
-    <Menuable.Item>
-      <Icon type="question" />
-      Sobre
-    </Menuable.Item>
+    <Link to="/">
+      <Menuable.Item>
+        <Icon type="alert" />
+        Barragens
+      </Menuable.Item>
+    </Link>
+    <Link to="/about">
+      <Menuable.Item>
+        <Icon type="question" />
+        Sobre
+      </Menuable.Item>
+    </Link>
   </Container>
 )
