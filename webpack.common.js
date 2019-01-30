@@ -7,6 +7,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HappyPack = require('happypack')
 
 module.exports = {
+  output: {
+    path: PATH.build
+  },
+
   resolve: {
     extensions: ['.js', '.less']
   },
