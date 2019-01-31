@@ -6,7 +6,7 @@ import { Header } from './components/Header'
 import { Menu } from './components/Menu'
 import { Map } from './pages/Map'
 import { About } from './pages/About'
-import { LocationProvider } from './providers/LocationProvider'
+import { Provider } from './Provider'
 
 const Container = styled.div`
   width: 100%;
@@ -22,9 +22,9 @@ export const App = () => (
       <Container>
         <Menu>
           <Switch>
-            <LocationProvider>
+            <Provider>
               <Route exact={true} path="/" component={Map} />
-            </LocationProvider>
+            </Provider>
             <Route path="/about" component={About} />
           </Switch>
         </Menu>

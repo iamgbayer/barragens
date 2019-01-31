@@ -1,3 +1,3 @@
 export default {
-  CSV: 'data.csv'
+  JSON: '../data/data.json'
 }

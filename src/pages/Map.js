@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Map as Mapeable, TileLayer } from 'react-leaflet'
 import { LocationConsumer } from '../providers/LocationProvider'
+import { BarrageConsumer } from '../providers/BarrageProvider'
 
 const Container = styled(Mapeable)`
   width: 100%;
@@ -10,14 +11,18 @@ const Container = styled(Mapeable)`
 
 export const Map = props => {
   return (
-    <LocationConsumer>
-      {({ lat, lng }) => (
-        <Container center={{ lat, lng }} zoom={5}>
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    <BarrageConsumer>
+      {() => (
+        <LocationConsumer>
+          {({ lat, lng }) => (
+            <Container center={{ lat, lng }} zoom={5}>
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-          {props.children}
-        </Container>
+              {props.children}
+            </Container>
+          )}
+        </LocationConsumer>
       )}
-    </LocationConsumer>
+    </BarrageConsumer>
   )
 }
