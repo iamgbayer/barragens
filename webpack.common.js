@@ -4,7 +4,6 @@ const PATH = require('./path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const HappyPack = require('happypack')
 
 module.exports = {
   output: {
