@@ -15,20 +15,20 @@ const Container = styled.div`
 `
 
 export const App = () => (
-  <Fragment>
-    <Header />
+  <BrowserRouter>
+    <Fragment>
+      <Header />
 
-    <Container>
-      <BrowserRouter>
-        <Menu />
-
-        <Switch>
-          <LocationProvider>
-            <Route exact={true} path="/" component={Map} />
-          </LocationProvider>
-          <Route path="/about" component={About} />
-        </Switch>
-      </BrowserRouter>
-    </Container>
-  </Fragment>
+      <Container>
+        <Menu>
+          <Switch>
+            <LocationProvider>
+              <Route exact={true} path="/" component={Map} />
+            </LocationProvider>
+            <Route path="/about" component={About} />
+          </Switch>
+        </Menu>
+      </Container>
+    </Fragment>
+  </BrowserRouter>
 )
