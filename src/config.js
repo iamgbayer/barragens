@@ -1,3 +1,3 @@
 export default {
-  JSON: '../data/data.json'
+  JSON: 'data.json'
 }
