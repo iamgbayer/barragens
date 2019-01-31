@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Map as Mapeable, TileLayer } from 'react-leaflet'
+import MarkerClusterGroup from 'react-leaflet-markercluster'
+
 import { LocationConsumer } from '../providers/LocationProvider'
-import { BarrageConsumer } from '../providers/BarrageProvider'
+import { DamsConsumer } from '../providers/DamsProvider'
+import { Dams } from '../components/Dams'
 
 const Container = styled(Mapeable)`
   width: 100%;
@@ -11,18 +14,23 @@ const Container = styled(Mapeable)`
 
 export const Map = props => {
   return (
-    <BarrageConsumer>
-      {() => (
+    <DamsConsumer>
+      {({ data }) => (
         <LocationConsumer>
           {({ lat, lng }) => (
-            <Container center={{ lat, lng }} zoom={5}>
+            <Container center={{ lat, lng }} zoom={5} maxZoom={15}>
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-              {props.children}
+              <MarkerClusterGroup
+                showCoverageOnHover={false}
+                spiderfyDistanceMultiplier={2}
+              >
+                <Dams data={data} />
+              </MarkerClusterGroup>
             </Container>
           )}
         </LocationConsumer>
       )}
-    </BarrageConsumer>
+    </DamsConsumer>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import { LocationProvider } from './providers/LocationProvider'
-import { BarrageProvider } from './providers/BarrageProvider'
+import { DamsProvider } from './providers/DamsProvider'
 
 export const Provider = props => (
   <LocationProvider>
-    <BarrageProvider>{props.children}</BarrageProvider>
+    <DamsProvider>{props.children}</DamsProvider>
   </LocationProvider>
 )
