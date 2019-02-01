@@ -22,25 +22,23 @@ export class DamsProvider extends React.Component {
    * @param {*} data
    */
   formatter(data) {
-    const format = dam => {
-      return {
-        height_above_foundation: dam['Altura Acima da Fundação (m)'],
-        height_above_ground: dam['Altura Acima do Terreno (m)'],
-        capacity: dam['Capacidade (hm3)'],
-        risk: dam['Categoria de Risco'],
-        dpa: dam['Classe de DPA'],
-        snisb: dam['Código SNISB'],
-        inspector: dam['Fiscalizador'],
-        city: dam['Município'],
-        name: dam['Nome da damm'],
-        state: dam['UF'],
-        purpose: dam['Uso Principal'],
-        coords: {
-          lat: dam['Latitude (Graus)'],
-          lng: dam['Longitude (Graus)']
-        }
+    const format = dam => ({
+      height_above_foundation: dam['Altura Acima da Fundação (m)'],
+      height_above_ground: dam['Altura Acima do Terreno (m)'],
+      capacity: dam['Capacidade (hm3)'],
+      risk: dam['Categoria de Risco'],
+      dpa: dam['Classe de DPA'],
+      snisb: dam['Código SNISB'],
+      inspector: dam['Fiscalizador'],
+      city: dam['Município'],
+      name: dam['Nome da Barragem'],
+      state: dam['UF'],
+      purpose: dam['Uso Principal'],
+      coords: {
+        lat: dam['Latitude (Graus)'],
+        lng: dam['Longitude (Graus)']
       }
-    }
+    })
 
     return data.map(format)
   }
