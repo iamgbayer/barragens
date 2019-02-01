@@ -6,12 +6,21 @@ const Container = styled.div`
   width: calc(100% - 20px);
   height: 200px;
   display block;
-  background: #fff;
   position: absolute;
   bottom: 10px;
   left: 10px;
   z-index: 999;
   border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  background: #fff;
+
+  h4 {
+    font-size: 15px;
+    background: #fafafa;
+    padding: 12px 10px;
+    color: rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid #e8e8e8;
+  }
 `
 
 export const Details = ({ data }) => {
@@ -19,7 +28,7 @@ export const Details = ({ data }) => {
 
   return (
     <Container>
-      <h2>{name}</h2>
+      <h4>{name}</h4>
     </Container>
   )
 }
