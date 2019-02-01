@@ -24,8 +24,8 @@ export const App = () => (
           <Switch>
             <Provider>
               <Route exact={true} path="/" component={Map} />
+              <Route exact={true} path="/about" component={About} />
             </Provider>
-            <Route path="/about" component={About} />
           </Switch>
         </Menu>
       </Container>

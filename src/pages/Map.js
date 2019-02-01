@@ -12,7 +12,7 @@ const Container = styled(Mapeable)`
   height: 100vh;
 `
 
-export const Map = props => {
+export const Map = () => {
   return (
     <DamsConsumer>
       {({ data }) => (

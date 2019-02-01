@@ -7,6 +7,8 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: PATH.build
+    contentBase: PATH.build,
+    publicPath: '/',
+    historyApiFallback: true
   }
 })

@@ -14,6 +14,6 @@ export const Dams = ({ data }) => {
   )
 }
 
-Dams.PropTypes = {
+Dams.propTypes = {
   data: PropTypes.array
 }
