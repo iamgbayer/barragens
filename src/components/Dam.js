@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { v4 } from 'uuid'
 import { Marker } from 'react-leaflet'
 
+import { Icon } from './Icon'
 import { Details } from './Details'
 
 export class Dam extends React.PureComponent {
@@ -9,7 +10,8 @@ export class Dam extends React.PureComponent {
     isShowable: false
   }
 
-  whenMarkerPressed = () => this.setState({ isShowable: true })
+  whenMarkerPressed = () =>
+    this.setState({ isShowable: !this.state.isShowable })
 
   render() {
     const { coords } = this.props.data
@@ -17,11 +19,16 @@ export class Dam extends React.PureComponent {
     const { isShowable } = this.state
 
     return (
-      <Fragment>
+      <div>
         {isShowable && <Details data={this.props.data} />}
 
-        <Marker key={v4()} position={[lat, lng]} />
-      </Fragment>
+        <Marker
+          icon={Icon}
+          onClick={this.whenMarkerPressed}
+          key={v4()}
+          position={[lat, lng]}
+        />
+      </div>
     )
   }
 }

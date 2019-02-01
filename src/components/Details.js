@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
+  width: calc(100% - 20px);
+  height: 200px;
+  display block;
+  background: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999;
+  border: 1px solid #e8e8e8;
 `
 
 export const Details = ({ data }) => {

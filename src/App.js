@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 import { Header } from './components/Header'
@@ -7,6 +8,13 @@ import { Menu } from './components/Menu'
 import { Map } from './pages/Map'
 import { About } from './pages/About'
 import { Provider } from './Provider'
+
+const GlobalStyle = createGlobalStyle`
+  .leaflet-tile-pane {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+`
 
 const Container = styled.div`
   width: 100%;
@@ -17,6 +25,7 @@ const Container = styled.div`
 export const App = () => (
   <BrowserRouter>
     <Fragment>
+      <GlobalStyle />
       <Header />
 
       <Container>
