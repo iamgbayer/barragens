@@ -61,6 +61,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${PATH.public}/index.html`
+    }),
+    new webpack.EnvironmentPlugin({
+      REACT_APP_UA: ''
     })
   ]
 }

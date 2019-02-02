@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import ReactGA from 'react-ga'
 import { Icon } from 'antd'
+
+import config from '../config'
 
 const Container = styled.div`
   width: calc(100% - 20px);
@@ -55,6 +58,8 @@ const Item = styled.div`
 
 export const Details = ({ data, whenCloseable }) => {
   const { name, state, risk, purpose, inspector, city, lng, lat } = data
+
+  ReactGA.pageview(`${config.resources.dam}/${name}`)
 
   return (
     <Container>

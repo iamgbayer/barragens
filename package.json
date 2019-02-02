@@ -9,7 +9,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-ga": "^2.5.3",
+    "react-ga": "^2.5.7",
     "react-leaflet": "^2.2.0",
     "react-leaflet-markercluster": "^2.0.0-rc3",
     "react-router": "^4.3.1",

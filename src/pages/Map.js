@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 import { Map as Mapeable, TileLayer } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 
+import config from '../config'
 import { LocationConsumer } from '../providers/LocationProvider'
 import { DamsConsumer } from '../providers/DamsProvider'
 import { Dams } from '../components/Dams'
@@ -14,6 +16,8 @@ const Container = styled(Mapeable)`
 `
 
 export const Map = () => {
+  ReactGA.pageview(config.resources.dams)
+
   return (
     <DamsConsumer>
       {({ data }) => (

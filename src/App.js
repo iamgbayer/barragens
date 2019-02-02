@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 import { Header } from './components/Header'
 import { Menu } from './components/Menu'
@@ -21,6 +22,8 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
 `
+
+ReactGA.initialize(process.env.REACT_APP_UA)
 
 export const App = () => (
   <BrowserRouter>
