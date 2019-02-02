@@ -34,6 +34,8 @@ export class DamsProvider extends React.Component {
       name: dam['Nome da Barragem'],
       state: dam['UF'],
       purpose: dam['Uso Principal'],
+      lng: dam['Longitude'],
+      lat: dam['Latitude'],
       coords: {
         lat: dam['Latitude (Graus)'],
         lng: dam['Longitude (Graus)']

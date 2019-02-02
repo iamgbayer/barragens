@@ -33,6 +33,9 @@ const Header = styled.div`
 
 const Body = styled.div`
   padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 `
 
 const Close = styled(Icon)`
@@ -43,6 +46,7 @@ const Close = styled(Icon)`
 
 const Item = styled.div`
   margin-bottom: 15px;
+  flex: 50%;
 
   strong {
     margin-right: 5px;
@@ -50,7 +54,7 @@ const Item = styled.div`
 `
 
 export const Details = ({ data, whenCloseable }) => {
-  const { name, state, risk, purpose, inspector, city, capacity } = data
+  const { name, state, risk, purpose, inspector, city, lng, lat } = data
 
   return (
     <Container>
@@ -74,6 +78,18 @@ export const Details = ({ data, whenCloseable }) => {
         <Item>
           <strong>Propósito da barragem</strong>
           <span>{purpose}</span>
+        </Item>
+        <Item>
+          <strong>Risco</strong>
+          <span>{risk}</span>
+        </Item>
+        <Item>
+          <strong>Latitude</strong>
+          <span>{lat}</span>
+        </Item>
+        <Item>
+          <strong>Longitude</strong>
+          <span>{lng}</span>
         </Item>
       </Body>
     </Container>
