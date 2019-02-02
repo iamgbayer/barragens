@@ -37,7 +37,7 @@ export const About = () => (
     </Description>
 
     <Description>
-      As informações relacionadas as barragens são totalmente obtidas da{' '}
+      As informa.+ções relacionadas as barragens são totalmente obtidas da{' '}
       <a
         href="http://www.snisb.gov.br/portal/snisb/mapas-tematicos-e-relatorios"
         target="_blank"

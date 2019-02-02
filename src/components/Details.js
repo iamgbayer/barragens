@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { Icon } from 'antd'
 
 const Container = styled.div`
   width: calc(100% - 20px);
@@ -16,19 +17,65 @@ const Container = styled.div`
 
   h4 {
     font-size: 15px;
-    background: #fafafa;
-    padding: 12px 10px;
+    margin-bottom: 0;
     color: rgba(0, 0, 0, 0.45);
-    border-bottom: 1px solid #e8e8e8;
   }
 `
 
-export const Details = ({ data }) => {
-  const { name } = data
+const Header = styled.div`
+  background: #fafafa;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Body = styled.div`
+  padding: 12px;
+`
+
+const Close = styled(Icon)`
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.45);
+  transform: rotate(315deg);
+`
+
+const Item = styled.div`
+  margin-bottom: 15px;
+
+  strong {
+    margin-right: 5px;
+  }
+`
+
+export const Details = ({ data, whenCloseable }) => {
+  const { name, state, risk, purpose, inspector, city, capacity } = data
 
   return (
     <Container>
-      <h4>{name}</h4>
+      <Header>
+        <h4>{name}</h4>
+        <Close onClick={whenCloseable} type="plus-circle" />
+      </Header>
+      <Body>
+        <Item>
+          <strong>Estado</strong>
+          <span>{state}</span>
+        </Item>
+        <Item>
+          <strong>Cidade</strong>
+          <span>{city}</span>
+        </Item>
+        <Item>
+          <strong>Orgão responsável</strong>
+          <span>{inspector}</span>
+        </Item>
+        <Item>
+          <strong>Propósito da barragem</strong>
+          <span>{purpose}</span>
+        </Item>
+      </Body>
     </Container>
   )
 }

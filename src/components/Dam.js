@@ -1,6 +1,7 @@
 import React from 'react'
 import { v4 } from 'uuid'
 import { Marker } from 'react-leaflet'
+import { Transition } from 'react-spring'
 
 import { Icon } from './Icon'
 import { Details } from './Details'
@@ -13,6 +14,8 @@ export class Dam extends React.PureComponent {
   whenMarkerPressed = () =>
     this.setState({ isShowable: !this.state.isShowable })
 
+  whenCloseable = () => this.setState({ isShowable: false })
+
   render() {
     const { coords } = this.props.data
     const { lat, lng } = coords
@@ -20,7 +23,9 @@ export class Dam extends React.PureComponent {
 
     return (
       <div>
-        {isShowable && <Details data={this.props.data} />}
+        {isShowable && (
+          <Details whenCloseable={this.whenCloseable} data={this.props.data} />
+        )}
 
         <Marker
           icon={Icon}

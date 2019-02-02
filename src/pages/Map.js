@@ -6,6 +6,7 @@ import MarkerClusterGroup from 'react-leaflet-markercluster'
 import { LocationConsumer } from '../providers/LocationProvider'
 import { DamsConsumer } from '../providers/DamsProvider'
 import { Dams } from '../components/Dams'
+import { Loading } from '../components/Loading'
 
 const Container = styled(Mapeable)`
   width: 100%;

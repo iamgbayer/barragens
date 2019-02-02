@@ -12,14 +12,14 @@ export class DamsProvider extends React.Component {
 
   componentDidMount() {
     fetch(config.JSON)
-      .then(result => result.json())
-      .then(result => this.formatter(result))
-      .then(result => this.setState({ data: result }))
+      .then(data => data.json())
+      .then(this.formatter)
+      .then(data => this.setState({ data }))
   }
 
   /**
    * @todo Anti corruption method
-   * @param {*} data
+   * @param {object} data
    */
   formatter(data) {
     const format = dam => ({
