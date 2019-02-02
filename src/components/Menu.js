@@ -1,16 +1,24 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Menu as Menuable, Icon } from 'antd'
 import { Link } from 'react-router-dom'
 
-const Container = styled(Menuable)`
+const Navigation = styled(Menuable)`
+  display: flex;
+  justify-content: flex-end;
+  height: 48px;
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 220px;
+  height: 100vh;
 `
 
 export const Menu = props => (
-  <Fragment>
-    <Container>
+  <Container>
+    <Navigation mode="horizontal">
       <Menuable.Item>
         <Link to="/">
           <Icon type="alert" />
@@ -23,8 +31,8 @@ export const Menu = props => (
           Sobre
         </Link>
       </Menuable.Item>
-    </Container>
+    </Navigation>
 
     {props.children}
-  </Fragment>
+  </Container>
 )

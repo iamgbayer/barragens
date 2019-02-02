@@ -4,7 +4,6 @@ import { createGlobalStyle } from 'styled-components'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import ReactGA from 'react-ga'
 
-import { Header } from './components/Header'
 import { Menu } from './components/Menu'
 import { Map } from './pages/Map'
 import { About } from './pages/About'
@@ -29,7 +28,6 @@ export const App = () => (
   <BrowserRouter>
     <Fragment>
       <GlobalStyle />
-      <Header />
 
       <Container>
         <Menu>
