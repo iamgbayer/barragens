@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
 `
 
-ReactGA.initialize(process.env.REACT_APP_UA)
+ReactGA.initialize(process.env.REACT_APP_UA, { testMode: true })
 
 export const App = () => (
   <BrowserRouter>
