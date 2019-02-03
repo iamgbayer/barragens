@@ -1,7 +1,6 @@
 import React from 'react'
 import { v4 } from 'uuid'
 import { Marker } from 'react-leaflet'
-import { Transition } from 'react-spring'
 
 import { Icon } from './Icon'
 import { Details } from './Details'
