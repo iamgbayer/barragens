@@ -28,7 +28,7 @@ yarn start
 
 ## Dúvidas ou sugestões
 
-Você pode abrir uma [issue](https://github.com/guuibayer/barragens/issues/new) ou me contatar no e-mail guiilherme.bayer@gmail.com.
+Você pode abrir uma [issue](https://github.com/guuibayer/barragens/issues/new) ou entrar no [Gitter](https://gitter.im/barragens/community#) do projeto.
 
 ## Contribuições
 
