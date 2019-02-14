@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
@@ -26,7 +26,7 @@ ReactGA.initialize(process.env.REACT_APP_UA)
 
 export const App = () => (
   <BrowserRouter>
-    <Fragment>
+    <>
       <GlobalStyle />
 
       <Container>
@@ -39,6 +39,6 @@ export const App = () => (
           </Switch>
         </Menu>
       </Container>
-    </Fragment>
+    </>
   </BrowserRouter>
 )

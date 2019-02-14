@@ -10,7 +10,7 @@ export function DamsProvider({ children }) {
     fetch(config.JSON)
       .then(data => data.json())
       .then(formatter)
-      .then(data => setData(data))
+      .then(setData)
   }, [])
 
   /**
