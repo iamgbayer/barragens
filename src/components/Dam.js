@@ -1,38 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { v4 } from 'uuid'
 import { Marker } from 'react-leaflet'
 
 import { Icon } from './Icon'
 import { Details } from './Details'
+import posed, { PoseGroup } from 'react-pose'
 
-export class Dam extends React.PureComponent {
-  state = {
-    isShowable: false
+const Transition = posed.div({
+  enter: {
+    y: 0,
+    opacity: 1,
+    delay: 300,
+    transition: {
+      y: { type: 'spring', stiffness: 1000, damping: 15 },
+      default: { duration: 300 }
+    }
+  },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 150 }
   }
+})
 
-  whenMarkerPressed = () =>
-    this.setState({ isShowable: !this.state.isShowable })
+export function Dam(props) {
+  const [isShowable, setIsShowable] = useState(false)
 
-  whenCloseable = () => this.setState({ isShowable: false })
+  const whenMarkerPressed = () => setIsShowable(!isShowable)
+  const whenCloseable = () => setIsShowable(false)
 
-  render() {
-    const { coords } = this.props.data
-    const { lat, lng } = coords
-    const { isShowable } = this.state
+  const { coords } = props.data
+  const { lat, lng } = coords
 
-    return (
-      <div>
+  return (
+    <>
+      <PoseGroup>
         {isShowable && (
-          <Details whenCloseable={this.whenCloseable} data={this.props.data} />
+          <Transition key="transition">
+            <Details whenCloseable={whenCloseable} data={props.data} />
+          </Transition>
         )}
+      </PoseGroup>
 
-        <Marker
-          icon={Icon}
-          onClick={this.whenMarkerPressed}
-          key={v4()}
-          position={[lat, lng]}
-        />
-      </div>
-    )
-  }
+      <Marker
+        icon={Icon}
+        onClick={whenMarkerPressed}
+        key={v4()}
+        position={[lat, lng]}
+      />
+    </>
+  )
 }

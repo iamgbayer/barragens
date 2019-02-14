@@ -1,27 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import config from '../config'
 
-const Dams = React.createContext()
+export const DamsContext = React.createContext()
 
-export const DamsConsumer = Dams.Consumer
+export function DamsProvider({ children }) {
+  const [data, setData] = useState([])
 
-export class DamsProvider extends React.Component {
-  state = {
-    data: []
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetch(config.JSON)
       .then(data => data.json())
-      .then(this.formatter)
-      .then(data => this.setState({ data }))
-  }
+      .then(formatter)
+      .then(data => setData(data))
+  }, [])
 
   /**
    * @todo Anti corruption method
    * @param {object} data
    */
-  formatter(data) {
+  const formatter = data => {
     const format = dam => ({
       height_above_foundation: dam['Altura Acima da Fundação (m)'],
       height_above_ground: dam['Altura Acima do Terreno (m)'],
@@ -45,9 +41,5 @@ export class DamsProvider extends React.Component {
     return data.map(format)
   }
 
-  render() {
-    return (
-      <Dams.Provider value={this.state}>{this.props.children}</Dams.Provider>
-    )
-  }
+  return <DamsContext.Provider value={data}>{children}</DamsContext.Provider>
 }

@@ -1,13 +1,10 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import ReactGA from 'react-ga'
 import { Icon } from 'antd'
-import { bounceInUp } from 'react-animations'
 
 import config from '../config'
-
-const animation = keyframes`${bounceInUp}`
 
 const Container = styled.div`
   width: calc(100% - 20px);
@@ -20,7 +17,6 @@ const Container = styled.div`
   border: 1px solid #e8e8e8;
   border-radius: 2px;
   background: #fff;
-  animation: 0.5s ${animation};
 
   h4 {
     font-size: 15px;
