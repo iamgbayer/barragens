@@ -5,8 +5,9 @@ import ReactGA from 'react-ga'
 import { Icon } from 'antd'
 
 import config from '../config'
+import { Transition } from './Transition'
 
-const Container = styled.div`
+const Container = styled(Transition)`
   width: calc(100% - 20px);
   height: 200px;
   display block;
@@ -56,13 +57,13 @@ const Item = styled.div`
   }
 `
 
-export const Details = ({ data, whenCloseable }) => {
+export const Details = ({ isShowable, data, whenCloseable, ...props }) => {
   const { name, state, risk, purpose, inspector, city, lng, lat } = data
 
   ReactGA.pageview(`${config.resources.dam}/${name}`)
 
   return (
-    <Container>
+    <Container {...props}>
       <Header>
         <h4>{name}</h4>
         <Close onClick={whenCloseable} type="plus-circle" />
