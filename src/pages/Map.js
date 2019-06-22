@@ -12,6 +12,11 @@ import { Dams } from '../components/Dams'
 const Container = styled(Mapeable)`
   width: 100%;
   height: 100vh;
+
+  .icon {
+    border: none;
+    background: transparent;
+  }
 `
 
 export const Map = () => {

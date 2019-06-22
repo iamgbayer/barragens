@@ -16,5 +16,6 @@ const Container = () => (
 )
 
 export const Icon = L.divIcon({
-  html: ReactDOMServer.renderToString(<Container />)
+  html: ReactDOMServer.renderToString(<Container />),
+  className: 'icon'
 })
