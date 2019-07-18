@@ -42,7 +42,7 @@ export const About = () => {
       </Description>
 
       <Description>
-        As informa.+ções relacionadas as barragens são totalmente obtidas da{' '}
+        As informações relacionadas as barragens são totalmente obtidas da{' '}
         <a
           href="http://www.snisb.gov.br/portal/snisb/mapas-tematicos-e-relatorios"
           target="_blank"
@@ -50,7 +50,7 @@ export const About = () => {
           Agência Nacional de Águas
         </a>
         , e não são apenas informações sobre barragens de minério e sim de
-        vários propósitos, atualmente são mais de 3500 barragens cadastradas no{' '}
+        vários propósitos, atualmente são mais de 5000 barragens cadastradas no{' '}
         <a href="http://www.snisb.gov.br/" target="_blank">
           SNISB - Sistema Nacional de Informações sobre Segurança de Barragens.
         </a>
@@ -61,7 +61,7 @@ export const About = () => {
         <a href="https://github.com/guuibayer/barragens" target="_blank">
           aqui
         </a>
-        , além de sugerir novas ideias e apontar melhorias atráves das issues.
+        , além de sugerir novas ideias e apontar melhorias através das issues.
       </Description>
     </Container>
   )
